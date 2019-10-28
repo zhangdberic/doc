@@ -1,0 +1,1 @@
+FilterChainProxy也可以理解为过滤器，其是security内部的过滤器，原理同web容器的Filter过滤器。其设计的目的是去耦合(Filter)，实现security自己可空的过滤器。
