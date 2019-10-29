@@ -1,5 +1,3 @@
 security oauth2 源码分析
 =================
-
-入口过滤器(FilterChainProxy)
------------------
+[oauth2的入口处理FilterChainProxy](https://github.com/zhangdberic/doc/blob/master/springcloud/oauth2/FilterChainProxy.md)
