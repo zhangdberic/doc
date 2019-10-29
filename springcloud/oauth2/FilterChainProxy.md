@@ -90,16 +90,28 @@ spring cloud oauth2在启动的时候，会创建5个SecurityFilterChain接口�
    执行操作：
 
    WebAsyncManagerIntegrationFilter
+
    SecurityContextPersistenceFilter
+
    HeaderWriterFilter
+
    LogoutFilter
+
    **OAuth2AuthenticationProcessingFilter**
+
    RequestCacheAwareFilter	
+
    SecurityContextHolderAwareRequestFilter
+
    AnonymousAuthenticationFilter
+
    SessionManagementFilter	
+
    ExceptionTranslationFilter
+
    FilterSecurityInterceptor
+
+   
 
 4. 第四个DefaultSecurityFilterChain
 
@@ -112,17 +124,30 @@ spring cloud oauth2在启动的时候，会创建5个SecurityFilterChain接口�
    执行操作：
 
    WebAsyncManagerIntegrationFilter
+
    SecurityContextPersistenceFilter
+
    HeaderWriterFilter
+
    **CorsFilter**
+
    LogoutFilter
+
    BasicAuthenticationFilter
+
    RequestCacheAwareFilter	
+
    SecurityContextHolderAwareRequestFilter
+
    AnonymousAuthenticationFilter
+
    SessionManagementFilter	
+
    ExceptionTranslationFilter
+
    FilterSecurityInterceptor
+
+   
 
 5. 第五个DefaultSecurityFilterChain
 
@@ -137,13 +162,25 @@ spring cloud oauth2在启动的时候，会创建5个SecurityFilterChain接口�
    执行操作：
 
    WebAsyncManagerIntegrationFilter  # 待以后介绍
+   
    SecurityContextPersistenceFilter # SecurityContextHolder赋值，存放Authentication到上下文件中。
+   
    HeaderWriterFilter # 响应头输出拦截，待以后介绍
+   
    LogoutFilter # 登出
+   
    **BasicAuthenticationFilter** # 拦截Basic Authentication请求，例如：使用请求Authentication携带token的请求。具体介绍详见BasicAuthenticationFilter.md。
+   
    RequestCacheAwareFilter # 待以后介绍
+   
    SecurityContextHolderAwareRequestFilter # 待以后介绍 
+   
    AnonymousAuthenticationFilter # 待以后介绍
+   
    SessionManagementFilter # 待以后介绍	
+   
    ExceptionTranslationFilter # 待以后介绍
+   
    FilterSecurityInterceptor # 待以后介绍
+   
+   
