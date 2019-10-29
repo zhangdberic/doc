@@ -10,6 +10,5 @@ security oauth2 源码分析
 
 > [SecurityContextPersistenceFilter(SecurityContextHolder赋值和清理操作)](https://github.com/zhangdberic/doc/blob/master/springcloud/oauth2/SecurityContextPersistenceFilter.md)
 
-> [BasicAuthenticationFilter]
-(https://github.com/zhangdberic/doc/blob/master/springcloud/oauth2/BasicAuthenticationFilter.md)
+> [BasicAuthenticationFilter(根据请求头Authorization username:password获取Authorization)](https://github.com/zhangdberic/doc/blob/master/springcloud/oauth2/BasicAuthenticationFilter.md)
 
