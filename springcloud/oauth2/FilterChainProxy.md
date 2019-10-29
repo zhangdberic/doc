@@ -63,7 +63,7 @@ spring cloud oauth2在启动的时候，会创建5个SecurityFilterChain接口�
 
    LogoutFilter # 登出
 
-   **BasicAuthenticationFilter** # 拦截Basic Authentication请求，例如：/oauth/token请求、请求头Authentication携带token的请求。具体介绍详见BasicAuthenticationFilter.md。
+   **BasicAuthenticationFilter** # 拦截Basic Authentication请求，例如：/oauth/token请求。具体介绍详见[BasicAuthenticationFilter.md](https://github.com/zhangdberic/doc/blob/master/springcloud/oauth2/BasicAuthenticationFilter.md)介绍，其实现了根据请求头Authorization值username:password获取Authorization对象，并填充SecurityContextHolder。
 
    RequestCacheAwareFilter # 待以后介绍
 
