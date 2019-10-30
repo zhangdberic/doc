@@ -95,6 +95,14 @@ public class ClientDetailsServiceCacheDecorator implements ClientDetailsService,
 
 ```
 
-4.好文章介绍
+4.application.yml加入redis配置
+spring:  
+  redis:  
+    host: 192.168.5.36  
+    port: 6379  
+    
+[redis参数配置文档]()
+
+好文章介绍
 https://blog.csdn.net/cpongo3/article/details/89882195
 
