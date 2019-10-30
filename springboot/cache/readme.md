@@ -1,3 +1,6 @@
+spring boot+@Cacheable+redis的基本配置
+----------
+
 开启springboot的cache步骤如下：
 
 1.pom.xml加入redis起步依赖
@@ -105,6 +108,23 @@ spring:
 
     
 [redis参数配置文档]()
+
+以上的配置就可以正确的运行spring boot+@Cacheable+redis的项目了。
+
+实际项目中一些问题的解决方案
+----------
+
+> 1.设置缓存的过期时间
+默认情况下的RedisCacheManager不会设置缓存过期时间，也就是说缓存永久生效。这里我们基于spring的bean后置处理来设置相关的过期时间属性。
+```java
+
+```
+
+
+
+> 2.设置缓存key的序列化器
+
+
 
 好文章介绍
 https://blog.csdn.net/cpongo3/article/details/89882195
