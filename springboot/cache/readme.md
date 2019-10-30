@@ -96,10 +96,13 @@ public class ClientDetailsServiceCacheDecorator implements ClientDetailsService,
 ```
 
 4.application.yml加入redis配置
+```yml
 spring:  
   redis:  
     host: 192.168.5.36  
     port: 6379  
+```    
+
     
 [redis参数配置文档]()
 
