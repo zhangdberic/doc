@@ -1,0 +1,71 @@
+server:
+  port: 8020
+  contextPath:   /auth
+# 开发环境        
+---
+spring:
+  profiles: dev
+  # 和spring-cloud-starter-bus-amqp配合,用于/bus/refresh分布式服务属性刷新
+  rabbitmq:
+    host: 192.168.5.29
+    port: 5672
+    username: admin
+    password: Rabbitmq-401
+  # spring jpa
+  jpa:
+    database: ORACLE
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle10gDialect
+  # datasource
+  datasource:
+    platform: oracle
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@//192.168.5.36:1521/dyitdb
+    username: teps
+    password: data
+    dbcp2:
+      test-while-idle: true
+      validation-query: select 1 from dual
+  devtools:
+    restart:
+      enabled: false
+  thymeleaf:
+    cache: false
+  redis:
+    host: 192.168.5.36
+    port: 6379
+    defaultExpireTime: 30
+    expires:
+      oauth2ClientDetailsServiceCache : 60
+    
+                
+# eureka客户端    
+eureka:
+  client:
+    service-url:
+      # 基于Basic的Security的访问eureka服务器
+      defaultZone: http://sc-eureka:veDSJeUX-JSxkWrk@localhost:8070/eureka/,http://sc-eureka:veDSJeUX-JSxkWrk@localhost:8071/eureka/
+    # 客户端监控检查(定时检查并发送健康状态到eureka服务器)  
+    healthcheck:
+      enabled: true
+  instance:
+    # 基于ip地址注册到eureka         
+    prefer-ip-address: true            
+# 日志    
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    org.springframework.jdbc.core: TRACE
+    org.springframework.security: DEBUG
+    org.springframework.data.redis: DEBUG
+security:
+  oauth2:
+    resource:
+      filter-order: 3    
+
+  
