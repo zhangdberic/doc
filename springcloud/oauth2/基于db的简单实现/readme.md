@@ -1,0 +1,1 @@
+基于数据库存储clientDetails、userDetails、token的简单实现，适用于简单的系统。
