@@ -55,5 +55,33 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 }
 ```  
 
+以上配置单一服务调用时没问题的，但如果是服务之间的调用，则还是会抛出401错误(没有授权)  
+
+*传递性*  
+
+传递性，如果一个服务要调用另一个服务，则需要传递Authorization请求头。
+
+如果使用的feign rpc访问调用，则无需任何特殊的配置，直接就支持Authorization请求头传递。
+
+如果是基于RestTemplate发送请求，则要替换为OAuth2RestTemplate，如下：
+```java  
+	
+	@Bean
+	public OAuth2RestTemplate oauth2RestTemplate(OAuth2ClientContext oauth2ClientContext,OAuth2ProtectedResourceDetails details ) {
+		return new OAuth2RestTemplate(details,oauth2ClientContext);
+	}
+```   
+
+
+```java  
+	@Autowired
+	private OAuth2RestTemplate oauth2RestTemplate;
+	
+	public Organization getOrganization(String organizationId) {
+		ResponseEntity<Organization> restExchange = oauth2RestTemplate.exchange("http://localhost/organizationservice/v1/organizations/{organizationId}", HttpMethod.GET, null, Organization.class, organizationId);
+		return restExchange.getBody();
+	}
+```
+
 
 
