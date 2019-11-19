@@ -18,5 +18,14 @@ spring-boot-autoconfigure
 > @ConditionalOnNotWebApplication	这不是一个Web应用程序  
 
 
-@ConditionalOnProperty
+
+### @ConditionalOnProperty
+
+#### 当配置了属性则为有效
+
+例如：
+
+@ConditionalOnProperty(value="server.response.content-length",matchIfMissing=false)
+
+如果application.yml中配置了server.response.content-length: xxx属性，则条件成立。
 
