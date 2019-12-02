@@ -26,6 +26,8 @@ spring-boot-autoconfigure
 例如：
 
 @ConditionalOnProperty(value="server.response.content-length",matchIfMissing=false)
-
 如果application.yml中配置了server.response.content-length: xxx属性，则条件成立。
+
+@ConditionalOnProperty(value = "feign.hystrix.enabled", havingValue = "true")
+如果application.yml中配置了feign.hystrix.enabled: true属性，则条件成立。
 
